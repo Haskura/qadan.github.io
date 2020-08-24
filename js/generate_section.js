@@ -22,7 +22,15 @@ function generate_option_range(section, option, option_data) {
   var option_range_title = document.createElement('h6');
   option_range_title.className = 'card-title pb-n1';
   option_range_title.id = section + '--' + option + '--title';
-  option_range_title.innerHTML = option_data['name'];
+  if (typeof Lang !== 'undefined') {
+    if (option_data.hasOwnProperty('name'+Lang)) {
+      option_range_title.innerHTML = option_data['name'+Lang];
+    } else {
+      option_range_title.innerHTML = option_data['name'];
+    }
+  } else {
+    option_range_title.innerHTML = option_data['name'];
+  }
   // Row that the input and value go in.
   var option_range_input_row = document.createElement('div');
   option_range_input_row.className = 'row pb-n1';
@@ -69,7 +77,15 @@ function generate_option_range(section, option, option_data) {
     var option_range_description = document.createElement('small');
     option_range_description.id = section + '--' + option + '--description';
     option_range_description.className = 'form-text text-muted help-text pb-4';
-    option_range_description.innerHTML = option_data['description'];
+    if (typeof Lang !== 'undefined') {
+      if (option_data.hasOwnProperty('description'+Lang)) {
+        option_range_description.innerHTML = option_data['description'+Lang];
+      } else {
+        option_range_description.innerHTML = option_data['description'];
+      }
+    } else {
+      option_range_description.innerHTML = option_data['description'];
+    }
     option_range_div.appendChild(option_range_description);
   }
   // Add a line break.
@@ -96,13 +112,29 @@ function generate_section(section, section_data) {
   var title = document.createElement('h5');
   title.id = section + '-title';
   title.className = "card-title section-title";
-  title.innerHTML = section_data['name'];
+  if (typeof Lang !== 'undefined') {
+    if (section_data.hasOwnProperty('name'+Lang)) {
+      title.innerHTML = section_data['name'+Lang];
+    } else {
+      title.innerHTML = section_data['name'];
+    }
+  } else {
+    title.innerHTML = section_data['name'];
+  }
   section_div.appendChild(title);
   // Section description.
   var description = document.createElement('p');
   description.id = section + '-description';
   description.className = "card-text help-text";
-  description.innerHTML = section_data['description'];
+  if (typeof Lang !== 'undefined') {
+    if (section_data.hasOwnProperty('name'+Lang)) {
+      description.innerHTML = section_data['description'+Lang];
+    } else {
+      description.innerHTML = section_data['description'];
+    }
+  } else {
+    description.innerHTML = section_data['description'];
+  }
   section_div.appendChild(description);
   // Section options.
   for (var option in section_data['options']) {

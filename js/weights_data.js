@@ -13,8 +13,10 @@ function get_weights_data() {
   return {
     "glitches_required": {
       "name": "Glitches Required",
+      "nameFR": "Glitches Requis",
       "group": "Item Placement",
       "description": "The types of glitches that may be required to complete the seed. Note that in the current build of EntranceRandomizer, overworld_glitches and major_glitches are not supported.",
+      "descriptionFR": "Défini le type de Glitches qui sont requis pour complété une seed. <br> Note: Dans les versions actuelle du Randomizer d'Entrée, les Overworld Glitches et les Major Glitches ne sont pas pris en charge.",
       "options": {
         "none": {
           "name": "None",
@@ -93,6 +95,7 @@ function get_weights_data() {
     },
     "dungeon_counters": {
       "name": "Dungeon Item Counters",
+      "nameFR": "Compteur d'Objets des Donjons",
       "group": "Item Placement",
       "description": "",
       "options": {
