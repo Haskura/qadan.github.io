@@ -21,6 +21,10 @@ function get_weights_data() {
           "description": "No glitches will be required to complete the seed.",
           "default": 100
         },
+        "minor_glitches" : {
+          "name": "Minor Glitches",
+          "description": "Puts fake flipper, waterwalk, super bunny shenanigans, and etc into logic"
+        },
         "overworld_glitches": {
           "name": "Overworld Glitches",
           "description": "Boots clipping, bunny death mountain descent, overworld superbunny tricks, and other valid overworld glitches may be required to complete the seed."
@@ -57,7 +61,7 @@ function get_weights_data() {
       "group": "Item Placement",
       "description": "Whether dungeon maps, compasses, and keys are shuffled outside of their dungeons.",
       "options": {
-        "standard": {
+        "none": {
           "name": "Standard",
           "description": "Maps, keys and compasses can be found shuffled inside their respective dungeons.",
           "default": 40
@@ -72,10 +76,45 @@ function get_weights_data() {
           "description": "Maps, compasses and small keys can be found outside of their respective dungeons.",
           "default": 15
         },
-        "full": {
+        "mcsb": {
           "name": "Full Keysanity",
           "description": "Maps, compasses, small keys and big keys can be found outside of their respective dungeons.",
           "default": 20
+        },
+        "lmcsb": {
+          "name": "Full Keysanity (local)",
+          "description": "Like mcsb above, but with keys kept local to your world. l is what makes your keys local, or not if it's missing.",
+        },
+        "ub": {
+          "name": "Universal small and shuffle big key",
+          "description": "universal small keys and shuffled big keys.",
+        }
+      }
+    },
+    "dungeon_counters": {
+      "name": "Dungeon Item Counters",
+      "group": "Item Placement",
+      "description": "",
+      "options": {
+        "on": {
+          "name": "Always",
+          "description": "Always display amount of items checked in a dungeon",
+          "default": 0
+        },
+        "pickup": {
+          "name": "Pick Up",
+          "description": "Show when compass is picked up",
+          "default": 1
+        },
+        "default": {
+          "name": "Standard",
+          "description": "Show when compass is picked up if the compass itself is shuffled",
+          "default": 0
+        },
+        "off": {
+          "name": "Off",
+          "description": "Never show item count in dungeons",
+          "default": 0
         }
       }
     },
@@ -97,6 +136,28 @@ function get_weights_data() {
           "name": "Beatable Only",
           "description": "The seed is only guaranteed to be beatable, and some inventory items or keys may never be accessible.",
           "default": 30
+        }
+      }
+    },
+    "progressive": {
+      "name": "Progressive Items",
+      "group": "Item Placement",
+      "description": "Enable or disable progressive items (swords, shields, bow)",
+      "options": {
+        "on": {
+          "name": "On",
+          "description": "All items are progressive",
+          "default": 1
+        },
+        "off": {
+          "name": "Off",
+          "description": "No items are progressive",
+          "default": 0
+        },
+        "random": {
+          "name": "Random",
+          "description": "Randomly decides for all items. Swords could be progressive, shields might not be",
+          "default": 0
         }
       }
     },
